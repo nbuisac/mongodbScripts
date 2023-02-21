@@ -15,3 +15,5 @@ mongosh 127.0.0.1/school GetStudents.js
 mongosh "mongodb+srv://cluster0.axngmv4.mongodb.net/school"  --username narcis GetStudents.js
 ```
 
+### Execute Postman files via Newman
+newman run NttData-Student-Gencat.postman_collection.json -e NttData-Student-PRO.postman_environment.json
