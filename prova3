@@ -1,0 +1,81 @@
+{
+	"id": "47cc952b-5ac4-42a5-b065-4cc5c9f3eb6b",
+	"name": "Data API",
+	"values": [
+		{
+			"key": "URL_ENDPOINT",
+			"value": "https://eu-west-2.aws.data.mongodb-api.com/app/data-coxma/endpoint/data/v1",
+			"type": "text",
+			"enabled": true
+		},
+		{
+			"key": "CONTENT_TYPE",
+			"value": "json",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "API_KEY",
+			"value": "EnAKbTiBaWKiLkSApT5tcvmcC9CHRSvKdgG2KsURbcWvC4xEsKL7Qqml22jq6rPN",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "DATA_SOURCE",
+			"value": "Cluster0",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "DATABASE",
+			"value": "school",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "COLLECTION",
+			"value": "students",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "FindOneName",
+			"value": "Claire",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "InsertOneName",
+			"value": "Narcis",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "InsertOneGpa",
+			"value": "5.2",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "UpdateGpa",
+			"value": "3.5",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "UpdateName",
+			"value": "Narcis",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "InsertOneMajor",
+			"value": "Computers",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-02-27T15:37:11.216Z",
+	"_postman_exported_using": "Postman/10.10.8"
+}
