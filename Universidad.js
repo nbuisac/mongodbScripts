@@ -1,4 +1,4 @@
-use Universidad
+use universidad
 db.Contadores.insert({
     "_id":"productid",
     "sequence_value": 0
@@ -33,4 +33,4 @@ db.Productos.insertOne({
     "nombre":"Sony Xperia",
     "categoría":"Teléfonos móviles"
  })
- 
+ show dbs
