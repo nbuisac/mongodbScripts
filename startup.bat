@@ -1,0 +1,2 @@
+start newman run NttData-Student-Gencat.postman_collection.json -e NttData-Student-PRO.postman_environment.json -r htmlextra
+start newman run MongoDBDataAPI.postman_school.json -e DataAPI.postman_environment_school.json -r htmlextra

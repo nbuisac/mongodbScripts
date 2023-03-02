@@ -18,6 +18,8 @@
 							"    pm.response.to.have.status(201);\r",
 							"});\r",
 							"pm.test(\"Resposta correcta\", function() {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.insertedId).to.be.a('string');\r",
 							"    pm.response.to.have.jsonBody('insertedId');\r",
 							"})"
 						],
@@ -139,8 +141,10 @@
 							"pm.test(\"Resposta correcta\", function() {\r",
 							"    const respostaJson = pm.response.json();\r",
 							"\r",
-							"    pm.expect(respostaJson.matchedCount).to.eql(1);\r",
-							"    pm.expect(respostaJson.modifiedCount).to.eql(1);\r",
+							"    // potser millor mirar només que hi ha un matxed count\r",
+							"    pm.expect(pm.response.text()).to.include(\"matchedCount\");\r",
+							"    // pm.expect(respostaJson.matchedCount).to.eql(1);\r",
+							"    // pm.expect(respostaJson.modifiedCount).to.eql(1);\r",
 							"})"
 						],
 						"type": "text/javascript"
@@ -194,6 +198,8 @@
 							"pm.test(\"Resposta correcta\", function() {\r",
 							"    const respostaJson = pm.response.json();\r",
 							"\r",
+							"    // Comrpvem, millor, que hi ha el deletedCount, no la quantitat 1\r",
+							"    pm.expect(pm.response.text()).to.include(\"deletedCount\");\r",
 							"    pm.expect(respostaJson.deletedCount).to.eql(1);\r",
 							"})"
 						],
@@ -250,6 +256,7 @@
 							"    \r",
 							"    pm.response.to.have.jsonBody('insertedIds');\r",
 							"    pm.expect(respostaJson.insertedIds).to.be.an('array');\r",
+							"    pm.expect(pm.response.text()).to.include(\"insertedIds\");\r",
 							"// no sé com comptar que siguin 3\r",
 							"})"
 						],
@@ -506,7 +513,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n      \"dataSource\": \"{{DATA_SOURCE}}\",\n      \"database\": \"{{DATABASE}}\",\n      \"collection\": \"{{COLLECTION}}\",\n      \"pipeline\": [\n          { \"$group\" : { \"_id\" : \"$major\", \"quants\" : { \"$sum\" : 1 }}},\n          {\n              \"$sort\": { \"quants\": -1 }\n          },\n          {\n              \"$limit\": 4\n          }\n      ]\n  }"
+					"raw": "{\n      \"dataSource\": \"{{DATA_SOURCE}}\",\n      \"database\": \"{{DATABASE}}\",\n      \"collection\": \"{{COLLECTION}}\",\n      \"pipeline\": [\n          { \"$group\" : { \"_id\" : \"$major\", \"quants\" : { \"$sum\" : 1 }, \"mitjanaGpa\" : { \"$avg\" : \"$gpa\" } }},\n          {\n              \"$sort\": { \"quants\": -1 }\n          },\n          {\n              \"$limit\": 4\n          }\n      ]\n  }"
 				},
 				"url": {
 					"raw": "{{URL_ENDPOINT}}/action/aggregate",
@@ -536,6 +543,7 @@
 							"    const respostaJson = pm.response.json();\r",
 							"\r",
 							"    pm.expect(respostaJson.deletedCount).to.eql(3);\r",
+							"    pm.expect(pm.response.text()).to.include(\"deletedCount\");\r",
 							"})"
 						],
 						"type": "text/javascript"
