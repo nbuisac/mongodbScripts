@@ -167,3 +167,18 @@ MongoDB Data API
 │ average response time: 279ms [min: 163ms, max: 465ms, s.d.: 112ms] │
 └────────────────────────────────────────────────────────────────────┘
 ```
+
+## 02/03/2023
+
+Hem actualitzat les proves newman de `school` i hem afegit el fitxer `startup.bat` que executa els dos newman que hem generat fins ara.
+
+# Python && MongoDB
+
+Cal instal·lar `pymongo` via `pip`
+
+```
+python -m pip install pymongo
+```
+
+De deures cal fer el mateix que amb Postman però amb Python
+
