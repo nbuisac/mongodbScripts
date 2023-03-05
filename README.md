@@ -182,3 +182,22 @@ python -m pip install pymongo
 
 De deures cal fer el mateix que amb Postman però amb Python
 
+Hem creat l'script de python `SchoolCRUD.py` que podem executar des del `CMD` o la `shell` amb la comanda
+
+```
+python SchoolCrud.py
+```
+
+Es connecta al `mongodb` del propi ordinador, `localhost` pel port per defecte `27017`.
+
+He trobat documentació al respecte a:
+
+* [https://pymongo.readthedocs.io/en/stable/index.html](https://pymongo.readthedocs.io/en/stable/index.html): Índex de la documentació de la libreria `pymongo`
+
+* [https://pymongo.readthedocs.io/en/stable/api/pymongo/](https://pymongo.readthedocs.io/en/stable/api/pymongo/): llibreria `pymongo`
+
+* [https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html](https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html): col·lecció `pymongo.collection`. Aquí trobem els mètodes per a treballar amb les col·leccions
+
+* [https://pymongo.readthedocs.io/en/stable/api/pymongo/results.html#pymongo.results.InsertOneResult](https://pymongo.readthedocs.io/en/stable/api/pymongo/results.html#pymongo.results.InsertOneResult): `pymongo.results` pel tractament dels resultats de les comandes `insert_one`, `update_one`, `delete_one`, `insert_many`, `update_many` i `delete_many`
+
+Per treballar directament amb la API de MongoDB, trobarem informació a [https://pymongo.readthedocs.io/en/stable/api/pymongo/server_api.html](https://pymongo.readthedocs.io/en/stable/api/pymongo/server_api.html)
