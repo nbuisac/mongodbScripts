@@ -2,7 +2,7 @@
 
 Scripts fets al Curs de MongoDB del 2023. Professor _Jordi Ascensión_.
 
-* [Accés a github de codi personal](https://github.com/nbuisac/mongodbScripts)
+* [Accés a github web](https://nbuisac.github.io/mongodbScripts/)
 
 * [Accés a github de codi personal](https://github.com/nbuisac/mongodbScripts)
 
@@ -47,7 +47,7 @@ l'script s'anomena `TreballantAmbSchool.js` i l'executarem de dues formes difere
 * contra el **servidor Atlas** amb la comanda
 
     ```
-    mongosh "mongodb+srv://cluster0.axngmv4.mongodb.net/school" --apiVersion 1 --username narcis --password narcis treballantAmbSchool.js
+    mongosh "mongodb+srv://cluster0.axngmv4.mongodb.net/school" --apiVersion 1 --username narcis treballantAmbSchool.js
     ```
 Amb newman farem quelcom semblant creant unes APIs que realitzaran les següents accions:
 
@@ -76,7 +76,7 @@ Generem un script js per a
 La comanda per executar l'script js és
 
 ```
-mongosh "mongodb+srv://cluster0.axngmv4.mongodb.net/school" --apiVersion 1 --username narcis --password narcis TreballantAmbSchool.js
+mongosh "mongodb+srv://cluster0.axngmv4.mongodb.net/school" --apiVersion 1 --username narcis TreballantAmbSchool.js
 ```
 
 per executar amb newman les consultes anteriors utilitzarem dos fitxers
@@ -242,7 +242,7 @@ Per a treballar amb Python i connectar-nos segons variables d'entorn he creat el
 
 * `"mongodb://localhost:27017/?readPreference=primary&ssl=false&directConnection=true"`
 
-* `"mongodb+srv://narcis:narcis@cluster0.axngmv4.mongodb.net/test"`
+* `"mongodb+srv://narcis@cluster0.axngmv4.mongodb.net/test"`
 
 Per executar:
 
@@ -255,7 +255,7 @@ per assignar variables d'entorn en *Windows*, des del `CMD`, podem utilitzar:
 ```doscon
 SET MongoDBConnection=localhost
 SET MongoDBConnection="mongodb://localhost:27017/?readPreference=primary\&ssl=false\&directConnection=true"
-SET MongoDBConnection="mongodb+srv://narcis:narcis@cluster0.axngmv4.mongodb.net/test"
+SET MongoDBConnection="mongodb+srv://narcis@cluster0.axngmv4.mongodb.net/test"
 ```
 
 He controlat l'error de connexió amb un `try` però, no es produeix la connexió fins que no fem el primer `find`.
@@ -281,3 +281,17 @@ mongosh 127.0.0.1/school StudentsValidation.js
 mongosh 127.0.0.1/school StudentsInsert.js
 ```
 
+Finalment veiem com fer referències entre col·leccions i la comanda/pipeline `lookup` a la pàgina [https://medium.com/@dcortes.net/relaciones-en-mongodb-edf2107a94ad](https://medium.com/@dcortes.net/relaciones-en-mongodb-edf2107a94ad)
+
+Sintaxi **lookup**
+
+```
+{   
+  $lookup: {       
+    from: <collection to join>,     
+    localField: <field from the input documents>,       
+    foreignField: <field from "from" collection>,
+    as: <output array field>     
+  }
+}
+```
