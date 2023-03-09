@@ -2,7 +2,9 @@
 
 Scripts fets al Curs de MongoDB del 2023. Professor _Jordi Ascensión_.
 
-[Accés a github de codi personal](https://github.com/nbuisac/mongodbScripts)
+* [Accés a github de codi personal](https://github.com/nbuisac/mongodbScripts)
+
+* [Accés a github de codi personal](https://github.com/nbuisac/mongodbScripts)
 
 Ara podem executar des del cmd
 
@@ -257,4 +259,25 @@ SET MongoDBConnection="mongodb+srv://narcis:narcis@cluster0.axngmv4.mongodb.net/
 ```
 
 He controlat l'error de connexió amb un `try` però, no es produeix la connexió fins que no fem el primer `find`.
+
 Aquesta, per tant, és la instrucció que hem de posar dins el `try`.
+
+# 09/03/2023
+
+Avui és el darrer dia. Mirem com funcionen les `pipelines` (`aggregate`)
+
+Després fem la *validació s'esquemes*.
+
+Quan se’nsenya JSON també caldria ensenyar json-schema [https://json-schema.org/](https://json-schema.org/)
+
+* [https://www.mongodb.com/docs/manual/core/schema-validation/](https://www.mongodb.com/docs/manual/core/schema-validation/) 
+
+* [https://www.mongodb.com/docs/manual/core/schema-validation/specify-json-schema/#std-label-schema-validation-json](https://www.mongodb.com/docs/manual/core/schema-validation/specify-json-schema/#std-label-schema-validation-json) 
+
+Creem dos scripts: `StudentsValidation.js` i `StudentsInsert.js`. Per executar-los:
+
+```
+mongosh 127.0.0.1/school StudentsValidation.js
+mongosh 127.0.0.1/school StudentsInsert.js
+```
+
